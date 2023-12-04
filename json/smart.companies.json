@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6446c4309f132c56b4a109c1"
+  },
+  "name": "Xioami",
+  "company_id": 1,
+  "img_url": "https://images.pexels.com/photos/3756879/pexels-photo-3756879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+},
+{
+  "_id": {
+    "$oid": "6446c4549f132c56b4a109c2"
+  },
+  "name": "Samsung",
+  "company_id": 2,
+  "img_url": "https://images.pexels.com/photos/214487/pexels-photo-214487.jpeg?auto=compress&cs=tinysrgb&w=1600"
+},
+{
+  "_id": {
+    "$oid": "6446c4699f132c56b4a109c3"
+  },
+  "name": "One plus",
+  "company_id": 3,
+  "img_url": "https://images.pexels.com/photos/596940/pexels-photo-596940.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+},
+{
+  "_id": {
+    "$oid": "6446c49c9f132c56b4a109c4"
+  },
+  "name": "Apple",
+  "company_id": 4,
+  "img_url": "https://images.pexels.com/photos/1647978/pexels-photo-1647978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+},
+{
+  "_id": {
+    "$oid": "6446c49c9f132c56b4a109c5"
+  },
+  "name": "Other",
+  "company_id": 5,
+  "img_url": "https://images.pexels.com/photos/6858618/pexels-photo-6858618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+},
+{
+  "_id": {
+    "$oid": "654a864b8d62c2e79c36b04f"
+  },
+  "name": "Hedgehog3",
+  "company_id": 2,
+  "img_url": "333",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654a867e8d62c2e79c36b051"
+  },
+  "name": "העמסה",
+  "company_id": 2,
+  "img_url": "333",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654f82a62b1b585ed0210da3"
+  },
+  "name": ";lkk;l;d",
+  "company_id": 1,
+  "img_url": "222",
+  "__v": 0
+}]
