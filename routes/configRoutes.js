@@ -1,7 +1,8 @@
 const indexR = require("./index");
 const usersR = require("./users");
-const companiesR = require("./companies");
-const devicesR = require("./devices");
+const dishesR = require("./dishes");
+const eventsR = require("./events");
+const workerR = require("./worker");
 // const autosR = require("./autos");
 const passwordResetR = require("./passwordReset");
 
@@ -10,8 +11,9 @@ const passwordResetR = require("./passwordReset");
 exports.routesInit = (app) => {
   app.use("/", indexR);
   app.use("/users", usersR);
-  app.use("/companies", companiesR);
-  app.use("/devices", devicesR);
+  app.use("/dishes", dishesR);
+  app.use("/worker", workerR);
+  app.use("/events", eventsR);
   // app.use("/autos", autosR);
   app.use("/passwordReset", passwordResetR); 
   app.use("*", (req, res) => {

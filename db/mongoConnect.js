@@ -9,7 +9,7 @@ async function main() {
   mongoose.set('strictQuery', false);
   // וזה לווינדוס 11
   await mongoose.connect(process.env.MONGO_URI);
-  console.log("mongo connect smart local");
+  console.log("mongo connect rest local");
   
 }
 

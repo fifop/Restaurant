@@ -1,0 +1,22 @@
+[
+  {"name": "Margherita Pizza", "dish_id": 1, "description": "Classic Margherita with fresh mozzarella and basil", "price": 12.99, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Caesar Salad", "dish_id": 2, "description": "Crisp romaine lettuce with Caesar dressing", "price": 8.99, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Spaghetti Carbonara", "dish_id": 3, "description": "Spaghetti with creamy egg sauce and pancetta", "price": 15.50, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Tiramisu", "dish_id": 4, "description": "Classic Italian dessert with mascarpone and coffee", "price": 10.00, "category": "dessert", "isAvailable": true, "imageUrl": ""},
+  {"name": "Bruschetta", "dish_id": 5, "description": "Toasted bread with tomatoes, basil, and garlic", "price": 6.50, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Lasagna", "dish_id": 6, "description": "Layered pasta with beef, cheese, and tomato sauce", "price": 14.00, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Panna Cotta", "dish_id": 7, "description": "Italian cream dessert with berry sauce", "price": 9.50, "category": "dessert", "isAvailable": true, "imageUrl": ""},
+  {"name": "Garlic Bread", "dish_id": 8, "description": "Bread with garlic and herbs", "price": 4.99, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Risotto", "dish_id": 9, "description": "Creamy rice dish with Parmesan cheese", "price": 13.00, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Gelato", "dish_id": 10, "description": "Italian ice cream with various flavors", "price": 5.00, "category": "dessert", "isAvailable": true, "imageUrl": ""},
+  {"name": "Caprese Salad", "dish_id": 11, "description": "Tomato, mozzarella, and basil salad", "price": 7.50, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Fettuccine Alfredo", "dish_id": 12, "description": "Pasta with creamy Alfredo sauce", "price": 14.50, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Affogato", "dish_id": 13, "description": "Espresso poured over vanilla gelato", "price": 6.00, "category": "dessert", "isAvailable": true, "imageUrl": ""},
+  {"name": "Minestrone Soup", "dish_id": 14, "description": "Vegetable soup with pasta", "price": 8.00, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Ravioli", "dish_id": 15, "description": "Pasta filled with cheese and spinach", "price": 12.50, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Cannoli", "dish_id": 16, "description": "Sicilian pastry tubes filled with sweet cream", "price": 7.00, "category": "dessert", "isAvailable": true, "imageUrl": ""},
+  {"name": "Antipasto Platter", "dish_id": 17, "description": "Assorted Italian appetizers", "price": 16.00, "category": "starter", "isAvailable": true, "imageUrl": ""},
+  {"name": "Chicken Parmesan", "dish_id": 18, "description": "Breaded chicken with marinara sauce and cheese", "price": 17.50, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Pistachio Gelato", "dish_id": 19, "description": "Pistachio-flavored Italian ice cream", "price": 5.50, "category": "dessert", "isAvailable": true,"imageUrl": ""},
+  {"name": "Focaccia Bread", "dish_id": 20, "description": "Italian flatbread with olive oil and herbs", "price": 5.99, "category": "starter", "isAvailable": true,"imageUrl": ""}
+]

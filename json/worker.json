@@ -1,0 +1,9 @@
+[
+  {"fullName": "John Doe", "role": "chef", "contactEmail": "johndoe@example.com", "phoneNumber": "1234567890", "salary": 50000, "dateJoined": "2021-01-10"},
+  {"fullName": "Jane Smith", "role": "manager", "contactEmail": "janesmith@example.com", "phoneNumber": "1234567891", "salary": 60000, "dateJoined": "2020-05-15"},
+  {"fullName": "Emily Johnson", "role": "waiter", "contactEmail": "emilyj@example.com", "phoneNumber": "1234567892", "salary": 30000, "dateJoined": "2021-03-20"},
+  {"fullName": "Michael Brown", "role": "bartender", "contactEmail": "michaelb@example.com", "phoneNumber": "1234567893", "salary": 35000, "dateJoined": "2021-06-30"},
+  {"fullName": "Sarah Davis", "role": "host", "contactEmail": "sarahd@example.com", "phoneNumber": "1234567894", "salary": 32000, "dateJoined": "2021-07-12"},
+  {"fullName": "William Wilson", "role": "cleaner", "contactEmail": "williamw@example.com", "phoneNumber": "1234567895", "salary": 28000, "dateJoined": "2020-11-22"},
+  {"fullName": "Olivia Martin", "role": "waiter", "contactEmail": "oliviam@example.com", "phoneNumber": "1234567896", "salary": 31000, "dateJoined": "2019-12-05"}
+]

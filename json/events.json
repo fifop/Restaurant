@@ -1,0 +1,14 @@
+[
+  {"eventName": "Wedding Reception", "eventDate": "2023-06-15", "numberOfGuests": 150, "description": "An elegant wedding reception", "isCatered": true},
+  {"eventName": "Corporate Gala", "eventDate": "2023-07-20", "numberOfGuests": 200, "description": "Annual corporate gala with awards ceremony", "isCatered": true},
+  {"eventName": "Birthday Party", "eventDate": "2023-08-10", "numberOfGuests": 50, "description": "30th birthday celebration", "isCatered": false},
+  {"eventName": "Charity Fundraiser", "eventDate": "2023-09-05", "numberOfGuests": 100, "description": "Fundraiser for local charity", "isCatered": true},
+  {"eventName": "Retirement Party", "eventDate": "2023-10-22", "numberOfGuests": 75, "description": "Celebrating a valued employee's retirement", "isCatered": false},
+  {"eventName": "New Year's Eve Bash", "eventDate": "2023-12-31", "numberOfGuests": 200, "description": "Ringing in the New Year", "isCatered": true},
+  {"eventName": "Family Reunion", "eventDate": "2023-05-30", "numberOfGuests": 120, "description": "Annual family gathering", "isCatered": false},
+  {"eventName": "Business Conference", "eventDate": "2023-11-15", "numberOfGuests": 300, "description": "Regional business conference", "isCatered": true},
+  {"eventName": "Art Exhibition Opening", "eventDate": "2023-04-18", "numberOfGuests": 80, "description": "Opening night of a new art exhibition", "isCatered": true},
+  {"eventName": "Wine Tasting Event", "eventDate": "2023-03-21", "numberOfGuests": 60, "description": "Exploring fine wines", "isCatered": false},
+  {"eventName": "Book Launch", "eventDate": "2023-02-11", "numberOfGuests": 40, "description": "Release of a new bestselling novel", "isCatered": true},
+  {"eventName": "Halloween Party", "eventDate": "2023-10-31", "numberOfGuests": 100, "description": "Spooky themed celebration", "isCatered": false}
+]
