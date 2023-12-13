@@ -7,8 +7,8 @@ const {
   getSingle,
   addEvent,
   editEvent,
-  deleteDish,
-} = require("../controller/dish_controller");
+  deleteEvent,
+} = require("../controller/event_controller");
 
 router.get("/", getEvents);
 router.get("/count", countPages);
@@ -17,6 +17,6 @@ router.get("/single/:id", getSingle);
 //  auth of admin
 router.post("/", auth, addEvent);
 router.put("/:id", authAdmin, editEvent);
-router.delete("/:id", authAdmin, deleteDish);
+router.delete("/:id", authAdmin, deleteEvent);
 
 module.exports = router;

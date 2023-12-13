@@ -6,7 +6,7 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const crypto = require('crypto');
 const bcrypt = require('bcrypt');
-const { UserModel } = require('../models/userModel'); // ייבוא המודל של המשתמש
+const { UserModel } = require('../models/UserModel'); // ייבוא המודל של המשתמש
 const router = express.Router();
 
 // פונקציה לבקשת איפוס סיסמה
@@ -62,12 +62,14 @@ router.post('/:token', async (req, res) => {
 
     // Find the user by the reset token expiration
     const user = await UserModel.findOne({
-      resetPasswordExpires: { $gt: Date.now() }
-    });
-    console.log('Stored token:', user.resetPasswordToken); // Log the stored hashed token
-    console.log('Received token:', token); // Log the received token
+  // resetPasswordToken: token,
+  resetPasswordExpires: { $gt: Date.now() }
+});
+
+
+    console.log('Stored token:', user ? user.resetPasswordToken : 'Not Found'); // Log the stored hashed token
     if (!user) {
-      console.log('Token expired or user not found');
+      console.log('Stored token:', user.resetPasswordToken); // Log the stored hashed token
       return res.status(400).send('Invalid or expired password reset token');
     }
 

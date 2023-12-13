@@ -3,7 +3,7 @@ const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const { config } = require("../config/secrets");
 
-const userSchema = new mongoose.Schema({
+let userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
@@ -46,6 +46,17 @@ exports.validateUser = (_reqBody) => {
   });
   return joiSchema.validate(_reqBody);
 };
+
+// Validation for user update
+exports.validateUserUpdate = (_reqBody) => {
+  let joiSchema = Joi.object({
+    name: Joi.string().min(2).max(150),
+    email: Joi.string().min(2).max(150).email(),
+    role: Joi.string().valid('user', 'admin') // Assuming 'user' and 'admin' are your roles
+  });
+  return joiSchema.validate(_reqBody);
+};
+
 
 exports.validateLogin = (_reqBody) => {
   let joiSchema = Joi.object({

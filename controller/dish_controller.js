@@ -41,39 +41,37 @@ exports.getSingle = async (req, res) => {
   }
 };
 
-//   add dishe
+// add dish
 exports.addDish = async (req, res) => {
+  console.log("Received dish data:", req.body); // Log incoming request data
+
   let validBody = validateDish(req.body);
   if (validBody.error) {
+    console.log("Validation error:", validBody.error.details); // Log validation errors
     return res.status(400).json(validBody.error.details);
   }
+
   try {
-    let cateogry = new DishModel(req.body);
-    await cateogry.save();
-    res.status(201).json(cateogry);
+    let dish = new DishModel(req.body);
+    await dish.save();
+    res.status(201).json(dish);
   } catch (err) {
-    console.log(err);
+    console.error("Error saving dish:", err); // Log errors during dish save
     res.status(502).json({ err });
   }
 };
 
 
-exports.addDishImage =(req, res) => {
-  const DishModel = require('./models/DishModel');
 
+exports.addDishImage = (req, res) => {
   if (req.file) {
-      const newDish = new DishModel({
-          // ... other dish details
-          imageUrl: `/uploads/${req.file.filename}` // Store the file path in the dish document
-      });
-
-      newDish.save()
-          .then(dish => res.send(dish))
-          .catch(err => res.status(500).send(err));
+      // Instead of creating a new dish, just return the URL of the uploaded image
+      res.json({ imageUrl: `/uploads/${req.file.filename}` });
   } else {
       res.status(400).send('No image uploaded.');
   }
-}
+};
+
 
 //   edit dish
 exports.editDish = async (req, res) => {
@@ -93,7 +91,7 @@ exports.editDish = async (req, res) => {
 exports.deleteDish = async (req, res) => {
   try {
     let id = req.params.id;
-    let data = await CompanyModel.deleteOne({ _id: id });
+    let data = await DishModel.deleteOne({ _id: id });
     res.json(data);
   } catch (err) {
     console.log(err);

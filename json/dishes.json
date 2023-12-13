@@ -1,5 +1,5 @@
 [
-  {"name": "Margherita Pizza", "dish_id": 1, "description": "Classic Margherita with fresh mozzarella and basil", "price": 12.99, "category": "main course", "isAvailable": true, "imageUrl": ""},
+  {"name": "Margherita Pizza", "dish_id": 1, "description": "Classic Margherita with fresh mozzarella and basil", "price": 12.99, "category": "main course", "isAvailable": true, "imageUrl": "'../../../../../public/images/309291.jpg'"},
   {"name": "Caesar Salad", "dish_id": 2, "description": "Crisp romaine lettuce with Caesar dressing", "price": 8.99, "category": "starter", "isAvailable": true, "imageUrl": ""},
   {"name": "Spaghetti Carbonara", "dish_id": 3, "description": "Spaghetti with creamy egg sauce and pancetta", "price": 15.50, "category": "main course", "isAvailable": true, "imageUrl": ""},
   {"name": "Tiramisu", "dish_id": 4, "description": "Classic Italian dessert with mascarpone and coffee", "price": 10.00, "category": "dessert", "isAvailable": true, "imageUrl": ""},

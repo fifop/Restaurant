@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   UserModel,
   validateUser,
+  validateUserUpdate,
   validateLogin,
   createToken,
 } = require("../models/UserModel");
@@ -22,6 +23,18 @@ exports.chackToken = async (req, res) => {
     res.status(502).json({ err });
   }
 };
+
+// exports.getUsersList = async (req, res) => {
+//   try {
+//     let data = await UserModel.find({});
+//     console.log(data);
+//     res.json(data);
+
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
 
 exports.getUsersList = async (req, res) => {
   let perPage = Math.min(req.query.perPage, 20) || 10;
@@ -135,46 +148,22 @@ exports.logIn = async (req, res) => {
     res.status(502).json({ err });
   }
 };
-
-//   edit role
-exports.changeRole = async (req, res) => {
+// Inside your changeRole function in users_controller.js
+exports.updateUser = async (req, res) => {
+  let validBody = validateUserUpdate(req.body);
+  if (validBody.error) {
+    return res.status(400).json(validBody.error.details);
+  }
   try {
-    const id = req.params.id;
-    const newRole = req.params.role;
-    console.log(newRole);
-    console.log(id);
-
-    // Prevent a user from changing their own role or the super admin's role
-    if (id === req.tokenData._id || id === "63b2a02cee44ada32ecbe89e") {
-      return res
-        .status(401)
-        .json({
-          err: "You can't change your user role or the super admin's role",
-        });
-    }
-    // Update the user's role in the database
-    const updatedUser = await UserModel.updateOne({ _id: id }, req.body);
-
-    console.log(id);
-    if (updatedUser) {
-      // Create a new token with the updated role
-
-      const newToken = createToken(updatedUser._id, updatedUser.role);
-      // Respond with the new token
-      res.json({
-        message: "User role updated and token refreshed.",
-        token: newToken,
-      });
-    } else {
-      res.status(404).json({ message: "User not found." });
-    }
+    let id = req.params.id;
+    let data = await UserModel.updateOne({ _id: id }, req.body);
+    res.json(data);
   } catch (err) {
     console.log(err);
-    res
-      .status(502)
-      .json({ err: "An error occurred while updating the user role." });
+    res.status(502).json({ err });
   }
 };
+
 
 // delete user
 exports.deleteUser = async (req, res) => {
@@ -187,3 +176,10 @@ exports.deleteUser = async (req, res) => {
     res.status(502).json({ err });
   }
 };
+
+
+
+
+
+
+

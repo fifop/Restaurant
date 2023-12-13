@@ -41,23 +41,23 @@ exports.getSingle = async (req, res) => {
   }
 };
 
-//   add dishe
+//   add event
 exports.addEvent = async (req, res) => {
   let validBody = validateEvent(req.body);
   if (validBody.error) {
     return res.status(400).json(validBody.error.details);
   }
   try {
-    let cateogry = new EventModel(req.body);
-    await cateogry.save();
-    res.status(201).json(cateogry);
+    let event = new EventModel(req.body);
+    await event.save();
+    res.status(201).json(event);
   } catch (err) {
     console.log(err);
     res.status(502).json({ err });
   }
 };
 
-//   edit dish
+//   edit event
 exports.editEvent = async (req, res) => {
   let validBody = validateEvent(req.body);
   if (validBody.error) {
@@ -72,7 +72,7 @@ exports.editEvent = async (req, res) => {
     res.status(502).json({ err });
   }
 };
-exports.deleteDish = async (req, res) => {
+exports.deleteEvent = async (req, res) => {
   try {
     let id = req.params.id;
     let data = await EventModel.deleteOne({ _id: id });

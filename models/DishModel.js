@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Joi = require('joi');
 
 // Mongoose Schema
-let dishSchema = new mongoose.Schema({
+const dishSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -10,7 +10,7 @@ let dishSchema = new mongoose.Schema({
   },
   dish_id: {
     type: Number,
-    required: true
+    required: false
   },
   description: {
     type: String,
@@ -43,11 +43,17 @@ exports.DishModel = mongoose.model('dishes', dishSchema);
 exports.validateDish = (_reqBody) => {
   let joiSchema = Joi.object({
     name: Joi.string().min(1).max(150).required(),
-    dish_id: Joi.number().min(1).max(9999).required(),
+    dish_id: Joi.number().min(1).max(9999),
     description: Joi.string().min(1).max(300).required(),
     price: Joi.number().min(0).required(),
     category: Joi.string().min(1).max(50).required(),
-    isAvailable: Joi.boolean()
+    isAvailable: Joi.boolean(),
+    imageUrl: Joi.string().allow(null, ''), // Allow imageUrl to be a string, null, or empty
+
   });
-  return joiSchema.validate(_reqBody);
+
+  const validation = joiSchema.validate(_reqBody);
+  console.log("Validation Result:", validation); // Log the validation result
+
+  return validation;
 };

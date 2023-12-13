@@ -10,7 +10,7 @@ const {
   getSingelUser,
   signUp,
   logIn,
-  changeRole,
+  updateUser,
   deleteUser,
 } = require("../controller/users_controller");
 
@@ -22,13 +22,17 @@ router.get("/usersList", getUsersList);
 router.get("/count", countPages);
 // מחזיר למשתמש את הפרטים שלו
 router.get("/userInfo", auth, getUserInfo);
-router.get("/single/:id", auth, getSingelUser);
+router.get("/single/:id",auth, getSingelUser);
 // sign up
 router.post("/", signUp);
 router.post("/logIn", logIn);
 //   edit role
-router.patch("/changeRole/:id/:role", authAdmin, changeRole);
+router.put("/updateUser/:id",authAdmin, updateUser);
 // delete user
 router.delete("/:id", authAdmin, deleteUser);
 
 module.exports = router;
+
+
+
+

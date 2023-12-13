@@ -1,8 +1,16 @@
 const express = require("express");
+const path = require("path");
+
 require('dotenv').config({ path: './sendgrid.env' });
+const fs = require('fs');
+const uploadDir = path.join(__dirname, 'uploads');
+
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const multer = require('multer');
 
-const path = require("path");
 const http = require("http");
 // מודול שיודע לפתור את בעיית האבטחת של הקורס
 // שלא ניתן בברירת מחדל לשלוח מדומיין א' בקשה לדומיין ב
@@ -30,29 +38,10 @@ routesInit(app);
 const server = http.createServer(app);
 // משתנה שיגדיר על איזה פורט אנחנו נעבוד
 // אנסה לבדוק אם אנחנו על שרת אמיתי ויאסוף את הפורט משם אם לא ואנחנו לוקאלי יעבוד על 3002
-let port = process.env.PORT || 3005;
+let port = process.env.PORT || 3006;
 // הפעלת השרת והאזנה לפורט המבוקש
 server.listen(port);
 
 
-// Multer setup
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // Make sure this directory exists
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    }
-});
-
-const fileFilter = (req, file, cb) => {
-    // Accept images only
-    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
-        return cb(new Error('Only image files are allowed!'), false);
-    }
-    cb(null, true);
-};
-
-const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 app.use('/uploads', express.static('uploads')); // Serve static files

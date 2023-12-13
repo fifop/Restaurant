@@ -2,24 +2,25 @@ const express = require("express");
 const router = express.Router();
 const { auth, authAdmin } = require("../middlewares/auth");
 const {
-  getWorker,
+  getWorkers,
   getWorkerList,
   countPages,
   getSingelWorker,
+  addWorker,
   editWorker,
   deleteWorker,
-} = require("../controller/users_controller");
+} = require("../controller/worker_controller");
 
-// ראוט לבדיקת הטוקן שבסופו הראוט מחזיר את כל המידע על הטוקן כולל
-router.get("/checkToken", auth, chackToken);
-// החזרת רשימת הלקוחות
-router.get("/", getWorker);
-router.get("/usersList", getWorkerList);
+// החזרת רשימת עובדים
+router.get("/", getWorkers);
+router.get("/workersList", getWorkerList);
 router.get("/count", countPages);
 // מחזיר למשתמש את הפרטים שלו
-router.get("/single/:id", auth, getSingelWorker);
+router.get("/single/:id", getSingelWorker);
+
+router.post("/addWorkers",authAdmin,addWorker)
 
 router.put("/:id",authAdmin,editWorker);
-// delete user
+// delete worker
 router.delete("/:id", authAdmin, deleteWorker);
 module.exports = router;

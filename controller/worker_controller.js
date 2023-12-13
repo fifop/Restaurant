@@ -40,8 +40,23 @@ exports.getSingelWorker = async (req, res) => {
   try {
     const id = req.params.id;
 
-    let user = await WorkerModel.findOne({ _id: id });
-    res.json(user);
+    let worker = await WorkerModel.findOne({ _id: id });
+    res.json(worker);
+  } catch (err) {
+    console.log(err);
+    res.status(502).json({ err });
+  }
+};
+
+exports.addWorker = async (req, res) => {
+  let validBody = validateWorker(req.body);
+  if (validBody.error) {
+    return res.status(400).json(validBody.error.details);
+  }
+  try {
+    let worker = new WorkerModel(req.body);
+    await worker.save();
+    res.status(201).json(worker);
   } catch (err) {
     console.log(err);
     res.status(502).json({ err });
@@ -64,7 +79,7 @@ exports.editWorker = async (req, res) => {
     }
   };
 
-// delete user
+// delete worker
 exports.deleteWorker = async (req, res) => {
   try {
     let id = req.params.id;
