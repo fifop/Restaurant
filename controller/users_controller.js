@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const Joi = require("joi");
 const {
   UserModel,
   validateUser,
@@ -9,6 +8,9 @@ const {
   createToken,
 } = require("../models/UserModel");
 const bcrypt = require("bcrypt");
+
+const Joi = require("joi");
+
 
 exports.getUsers = async (req, res) => {
   res.json({ msg: "Users endpoint!" });
