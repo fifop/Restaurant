@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { EventModel, validateEvent } = require("../models/eventModel");
+const { EventModel, validateEvent } = require("../models/EventModel");
 
 exports.getEvents = async (req, res) => {
   let perPage = Math.min(req.query.perPage, 20) || 10;
