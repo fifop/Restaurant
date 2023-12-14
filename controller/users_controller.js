@@ -9,9 +9,6 @@ const {
 } = require("../models/UserModel");
 const bcrypt = require("bcrypt");
 
-const Joi = require("joi");
-
-
 exports.getUsers = async (req, res) => {
   res.json({ msg: "Users endpoint!" });
 };
